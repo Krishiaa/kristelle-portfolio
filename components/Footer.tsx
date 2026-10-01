@@ -1,0 +1,2 @@
+import {content} from "@/data/content";
+export default function Footer(){return <footer className="bg-ink px-5 py-8 text-white"><div className="mx-auto flex max-w-6xl flex-col justify-between gap-3 text-sm sm:flex-row"><p>© {new Date().getFullYear()} {content.name}. All rights reserved.</p><a href="#home" className="text-pink hover:underline">Back to top ↑</a></div></footer>}

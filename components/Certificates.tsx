@@ -1,0 +1,5 @@
+ "use client";
+import {motion,useReducedMotion} from "framer-motion";
+import {content} from "@/data/content";
+import {SectionTitle} from "./Motion";
+export default function Certificates(){const reduce=useReducedMotion();return <section className="px-5 py-24"><div className="mx-auto max-w-6xl"><SectionTitle eyebrow="Learning & development" title="Certificates"/><div className="grid gap-4 md:grid-cols-3">{content.certificates.map((c,i)=><motion.div key={i} initial={reduce?false:{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.3}} transition={{duration:.6,delay:reduce?0:i*.08,ease:"easeOut"}} className="rounded-2xl border border-dashed border-pink bg-white p-6"><div className="mb-5 text-2xl text-hotpink">✧</div><p className="font-semibold">{c}</p><p className="mt-2 text-sm text-muted">Organization · Date</p></motion.div>)}</div></div></section>}

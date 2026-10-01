@@ -1,0 +1,5 @@
+ "use client";
+import {motion,useReducedMotion} from "framer-motion";
+import {content} from "@/data/content";
+import {SectionTitle} from "./Motion";
+export default function WhyMe(){const reduce=useReducedMotion();return <section className="px-5 py-24"><div className="mx-auto max-w-6xl"><SectionTitle eyebrow="What you can expect" title="Why Work With Me"/><motion.div initial={reduce?false:{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.3}} transition={{duration:.7,ease:"easeOut"}} className="rounded-[2rem] bg-ink p-8 text-white md:p-12"><p className="max-w-2xl text-lg leading-8 text-white/75">I bring a thoughtful, service-oriented approach and experience responding to different customer needs.</p><ul className="mt-8 grid gap-4 sm:grid-cols-2">{content.strengths.map((s,i)=><motion.li key={s} initial={reduce?false:{opacity:0,x:-12}} whileInView={{opacity:1,x:0}} viewport={{once:true,amount:.3}} transition={{duration:.5,delay:reduce?0:i*.07,ease:"easeOut"}} className="flex gap-3 leading-7"><span className="mt-1 text-pink">✦</span><span>{s}</span></motion.li>)}</ul></motion.div></div></section>}
